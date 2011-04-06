@@ -6,7 +6,7 @@ Usage
 --------
 Usage is very simple and follows the syntax:
     .lipsum( properties );
-where `properties` is a map of options used to determine how the text is displayed. There are three options you can use: `type`, `number`, and `spaces`; `type` lets you specify whether you are viewing pargraphs or words, `number` dictates the number of pargraphs or words, and `spaces`, which is only applicable on `type: 'words'`, displays text with no whitespace. The default setting for this plugin is to display the entire "Lorem Ipsum" text in 5 paragraphs.
+where `properties` is a map of options used to determine how the text is displayed. There are three options you can use: `type`, `number`, and `spaces`; `type` lets you specify whether you are viewing paragraphs or words, `number` dictates the number of paragraphs or words, and `spaces`, which is only applicable on `type: 'words'`, displays text with no whitespace. The default setting for this plugin is to display the entire "Lorem Ipsum" text in 5 paragraphs.
 
 Examples
 ---------
