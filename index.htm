@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+	<head>
+		<title> Lipsum.js</title>
+		<style type="text/css">
+			body{ background: #ddd; font-family: 'Calibri', Helvetica, Arial; font-size: 15px; color: #333;}
+			button{background: #eee; font-family: 'Calibri', Helvetica, Arial; font-size: 15px; color: #333; box-shadow: 0px 0px 5px #666; border-radius: 5px}
+			#top{ margin: 0 auto; width: 800px }
+			#container{ margin: 0 auto; padding-top: 10px; width: 800px; font-family: 'Calibri', Helvetica, Arial; font-size: 15px; color: #555; text-shadow: 0px 1px 1px #fff; word-wrap: break-word };
+			#code { display: block }
+		</style>
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript" src="lipsum.min.js"></script>
+		
+		<script>
+			$(document).ready(function () {
+				$("#default").click(function(){
+					$("#container").lipsum();
+					$("#code").html("$(\"#container\").lipsum();");
+				});
+				$("#par").click(function(){
+					var fnumber = $("input").val();
+					$("#container").lipsum({type: 'paragraphs', number: fnumber });
+					$("#code").html("$(\"#container\").lipsum({type: 'paragraphs', number: " + fnumber + " });");
+				});
+				$("#word").click(function(){
+					var fnumber = $("input").val();
+					$("#container").lipsum({type: 'words', number: fnumber });
+					$("#code").html("$(\"#container\").lipsum({type: 'words', number: '" + fnumber + "' });");
+				});
+				$("#wordnospace").click(function(){
+					var fnumber = $("input").val();
+					$("#container").lipsum({type: 'words', number: fnumber, spaces: 'false' });
+					$("#code").html("$(\"#container\").lipsum({type: 'words', number: '" + fnumber + "', spaces: 'false' });");
+				});
+			});
+		</script>
+		</head>
+		<body>
+		<div id="top">
+			<button id="default"> Default Settings </button>
+			<button id="par"> Paragraphs </button>
+			<button id="word"> Words </button>
+			<button id="wordnospace"> Words with no Spaces </button>
+			Number: <input  type="text" id="amount" value="3" />
+			<div id="code"> </div>
+		</div>
+		<div id="container">
+		 
+		</div>
+	</body>
+</html>
