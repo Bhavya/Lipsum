@@ -1,6 +1,6 @@
 Lipsum.js
 ============
-Lipsum is a simple "Lorem Ipsum" plugin for JQuery. It fills any provided DOM element with the standard "Lorem Ipsum" text provided by [http://www.lipsum.com/] . 
+Lipsum is a simple "Lorem Ipsum" plugin for JQuery. It fills any provided DOM element with the standard "Lorem Ipsum" text provided by [http://www.lipsum.com/](http://www.lipsum.com/). 
 
 Usage
 --------
