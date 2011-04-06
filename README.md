@@ -4,7 +4,7 @@ Lipsum is a simple "Lorem Ipsum" plugin for JQuery. It fills any provided DOM el
 
 Usage
 --------
-Usage is very simple and follows the syntax
+Usage is very simple and follows the syntax:
     .lipsum( properties );
 where `properties` is a map of options used to determine how the text is displayed. There are three options you can use: `type`, `number`, and `spaces`; `type` lets you specify whether you are viewing pargraphs or words, `number` dictates the number of pargraphs or words, and `spaces`, which is only applicable on `type: 'words'`, displays text with no whitespace. The default setting for this plugin is to display the entire "Lorem Ipsum" text in 5 paragraphs.
 
@@ -19,3 +19,4 @@ A demo is provided in `index.html`, but here are some examples of usage anyway.
 
 Notes
 ------
+Lipsum.js does not dynamically determine paragraph size, i.e. if you specify `$(this).lipsum({ type: 'paragraphs', number: '10' });` you will get the whole "Lorem Ipsum" text twice rather than one iteration of the text divided into 10 paragraphs. 
