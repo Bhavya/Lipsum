@@ -1,3 +1,5 @@
+//Copyright (C) 2011 Bhavya Kashyap
+
 (function( $ ){
 	$.fn.lipsum = function( options ) {
     options = $.extend({
