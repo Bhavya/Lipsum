@@ -1,7 +1,7 @@
 (function( $ ){
 	$.fn.lipsum = function( options ) {
     options = $.extend({
-      type: 'paragraphs',
+    type: 'paragraphs',
 	  number: '5',
 	  spaces: 'true'
     }, options);
@@ -14,28 +14,33 @@
 	lorem[4] = "Aenean ut lectus quis eros iaculis dignissim. Donec eget arcu a sapien adipiscing vehicula. Curabitur scelerisque leo nec quam condimentum nec porttitor ipsum aliquet. Vivamus mollis feugiat erat non malesuada. Pellentesque nulla magna, tristique sed tristique sed, gravida a quam. Quisque ornare justo ac lorem sollicitudin mattis. Proin euismod gravida turpis, eget eleifend nulla eleifend quis. Pellentesque auctor, lacus a ultricies vulputate, odio felis adipiscing dui, at feugiat velit urna lacinia purus. Pellentesque lacinia pulvinar enim, sed ornare elit laoreet at. Quisque placerat ligula et justo porta vel interdum nibh commodo. Nulla at mauris quam, at condimentum mi. Nullam ac enim elit. Mauris eget eros nec nibh euismod interdum. Praesent et elit augue. Morbi lobortis viverra aliquet. Morbi facilisis blandit lobortis. In consequat luctus leo id euismod. In vitae posuere nibh. ";
 	
 	this.each(function() {
-		$(this).html("");
-		var number = parseInt( options.number );
-		if( options.type == 'paragraphs' ){
-			for(var i = 0; i < number; i++){
-				$(this).append('<p>'+lorem[i%5]+'</p>');
-			}
-		} else if ( options.type == 'words' ){
-			var totalWords = lorem[0] + lorem[1] + lorem[2] + lorem[3] + lorem[4]; 
-			var words = totalWords.split(/\s+/);
-			var wordCount = words.length;
-			var display = "";
+	  	$(this).html("");
+  		var number = parseInt( options.number );
+  		if( options.type == 'paragraphs' ){
+  			for(var i = 0; i < number; i++){
+  				$(this).append('<p>'+lorem[i%5]+'</p>');
+  			}
+  		} else if ( options.type == 'words' ){
+  		  var totalWords;
+  			for(var i = 0; i < lorem.length; i++){
+  			  totalWords = lorem[i]; 
+  			}
+  			var words = totalWords.split(/\s+/);
+  			var wordCount = words.length;
+  			var display = "";
 			
-			for(var j = 0; j < number; j++){
-				if( options.spaces == 'true' ){
-					display = display + " " + words[j%wordCount];
-				} else {
-					display = display + words[j%wordCount];
-				}
-			}
-			
-			$(this).append(display);			
-		}
+  			for(var j = 0; j < number; j++){
+  				if( options.spaces == 'true' ){
+  					display = display + " " + words[j%wordCount];
+  				} else {
+  					display = display + words[j%wordCount];
+  				}
+  			}
+  			$(this).append(display);	
+  			words = null;	
+  		}
+  		
+  		lorem = null;	
     });
   };   
 })( jQuery );
